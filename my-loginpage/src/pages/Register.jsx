@@ -11,7 +11,7 @@ function Register() {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  // Generate 4-digit OTP
+ 
   const generateOtp = () => Math.floor(1000 + Math.random() * 9000).toString();
 
   const sendOtp = () => {
@@ -20,12 +20,12 @@ function Register() {
     const otp = generateOtp();
     setGeneratedOtp(otp);
 
-    // Send email via EmailJS
+   
     emailjs.send(
       "service_kaopbjm",    
       "template_o130y98",   
       {
-        email: form.email,     // matches your template
+        email: form.email,     
         passcode: otp,
         time: "15 minutes"
       },
@@ -41,10 +41,10 @@ function Register() {
 
   const verifyOtp = () => {
     if (form.otp === generatedOtp) {
-      // Save user immediately after OTP verification
+      
       localStorage.setItem("user", JSON.stringify(form));
       alert("OTP verified successfully! Registration complete, please login.");
-      navigate("/"); // Redirect to login page
+      navigate("/"); 
     } else {
       alert("Invalid OTP, please try again.");
     }

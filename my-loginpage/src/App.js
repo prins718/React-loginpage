@@ -5,17 +5,20 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login setUser={setUser} />} />
+        <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/register" element={<Register />} />
         <Route
           path="/dashboard"
-          element={user ? <Dashboard user={user} /> : <Navigate to="/" />}
+          element={
+            user ? <Dashboard user={user} setUser={setUser} /> : <Navigate to="/login" />
+          }
         />
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </Router>
   );
