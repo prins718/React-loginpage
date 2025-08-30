@@ -6,11 +6,11 @@ function Dashboard({ user, setUser }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Clear user state + localStorage
+    
     setUser(null);
     localStorage.removeItem("user");
 
-    // Redirect to login page
+    
     navigate("/login");
   };
 

@@ -66,3 +66,54 @@
 .login-container a:hover {
   text-decoration: underline;
 }
+
+.input-error {
+  border: 2px dotted red;
+  outline: none;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin: 4px 0 10px;
+}
+
+
+
+input {
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-error {
+  border: 2px dotted red !important;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin: 4px 0 8px;
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  flex: 1;
+  padding-right: 30px; /* space for icon */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+

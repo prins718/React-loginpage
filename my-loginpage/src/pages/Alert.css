@@ -1,0 +1,50 @@
+.alert-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  animation: slideIn 0.3s ease;
+}
+
+.alert-box.success {
+  background: #28a745; /* green */
+}
+
+.alert-box.error {
+  background: #dc3545; /* red */
+}
+
+.alert-box.warning {
+  background: #ffc107; /* yellow */
+  color: #000;
+}
+
+.alert-box.info {
+  background: #17a2b8; /* blue */
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
